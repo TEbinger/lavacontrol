@@ -16,3 +16,4 @@ minetest.override_item( "bucket:bucket_lava", {
 minetest.override_item( "default:lava_source", {
         allow_place = allow_place_lava
 } )
+minetest.register_privilege( "lava", "Can place lava at any depth.")
