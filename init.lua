@@ -2,7 +2,7 @@ local LAVA_PLACE_DEPTH = -50
 
 minetest.register_privilege( "lava", "Can place lava at any depth.")
 
-function allow_place_lava(itemstack, node_pos, player )
+function allow_place_lava(itemstack, pos, player )
         if pos.y > LAVA_PLACE_DEPTH and not minetest.check_player_privs( player, "lava" ) then
                 minetest.chat_send_player( player:get_player_name( ), "You are not allowed to place lava above " .. LAVA_PLACE_DEPTH .. "!" )
                 minetest.log( "action", player:get_player_name( ) .. " tried to place default:lava_source above " .. LAVA_PLACE_DEPTH )
