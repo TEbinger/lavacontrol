@@ -12,10 +12,10 @@ function allow_place_lava( node_pos, player )
 end
 
 minetest.override_item( "bucket:bucket_lava", {
-        allow_place = allow_place_lava
+        on_place = allow_place_lava
 } )
 
 minetest.override_item( "default:lava_source", {
-        allow_place = allow_place_lava
+        on_place = allow_place_lava
 } )
 
