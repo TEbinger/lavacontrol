@@ -1,4 +1,4 @@
---weitere interessanter Code: https://github.com/SmallJoker/minibase_game/blob/master/mods/default/nodes.lua#L535
+lav--weitere interessanter Code: https://github.com/SmallJoker/minibase_game/blob/master/mods/default/nodes.lua#L535
 --Quelle: https://forum.minetest.net/viewtopic.php?p=299612#p299612
 
 minetest.register_privilege( "lava", "Can place lava at any depth.")
@@ -59,10 +59,16 @@ local LAVA_PLACE_DEPTH = -250
 local function allow_place_lava( node_pos, player )
         if node_pos.y > LAVA_PLACE_DEPTH and not minetest.check_player_privs( player, "lava" ) then
                 minetest.chat_send_player( player:get_player_name( ), "You are not allowed to place explosives above " .. LAVA_PLACE_DEPTH .. "!" )
-                minetest.log( "action", player:get_player_name( ) .. " tried to place tnt:tnt above " .. LAVA_PLACE_DEPTH )
+                minetest.log( "action", player:get_player_name( ) .. " tried to place default:lava_source above " .. LAVA_PLACE_DEPTH )
                 return false
         end
         return true
 end
 
+minetest.override_item( "bucket:bucket_lava", {
+        allow_place = allow_place_lava
+} )
 
+minetest.override_item( "default:lava_source", {
+        allow_place = allow_place_lava
+} )
