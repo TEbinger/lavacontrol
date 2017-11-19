@@ -1,4 +1,4 @@
-lav--weitere interessanter Code: https://github.com/SmallJoker/minibase_game/blob/master/mods/default/nodes.lua#L535
+--weitere interessanter Code: https://github.com/SmallJoker/minibase_game/blob/master/mods/default/nodes.lua#L535
 --Quelle: https://forum.minetest.net/viewtopic.php?p=299612#p299612
 
 minetest.register_privilege( "lava", "Can place lava at any depth.")
@@ -71,4 +71,3 @@ minetest.override_item( "bucket:bucket_lava", {
 
 minetest.override_item( "default:lava_source", {
         allow_place = allow_place_lava
-} )
