@@ -1,4 +1,5 @@
 # lavacontrol
+NOT FINISHED AND WORKING YET!
 
 A simple minetest mod that helps to avoid people messing around with lava on servers.
 To use lava you need the privilege "lava"
